@@ -79,3 +79,24 @@ Execute the coverage:
 ```
 ./run coverage
 ```
+
+## Project Directory Structure
+
+```
+├── app                 # App Folder
+│   ├── controllers     # Interface client - services
+│   ├── domain          # Domain models and business logic
+│   ├── repository      # Data access and persistence
+│   └── schemas         # Pydantic models used for data validation
+|       ├── requests    # Request models for data validation
+|       └── responses   # Response models for data validation
+│   ├── services        # business logic layer of the application
+│   └── utils           # Utility functions 
+├── config              # Contains configuration files
+├── hooks               # Git hooks
+├── migrations          # Configuration database migrations
+├── routes              # Route definitions
+├── tests               # All unit tests
+├── requirements.txt    # Dependencies of project
+└── main.py             # Main script of project
+```
