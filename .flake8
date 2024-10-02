@@ -1,0 +1,12 @@
+[flake8]
+ignore = D100, D101, D102, D103, E501, F405, W503, W504
+max-line-length = 88
+exclude =
+	migrations/*
+	.venv/*
+	venv/*
+	.direnv/*
+    tests/*
+max-complexity = 6
+import-order-style = google
+application-import-names = app, migrations, routes
