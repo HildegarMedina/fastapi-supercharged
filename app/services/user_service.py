@@ -11,6 +11,10 @@ class UserService:
     async def get(self, user_id):
         return await self.repo.get(User, user_id)
 
+    async def get_by_email(self, email):
+        result = await self.repo.execute(select(User).where(User.email == email))
+        return result.scalars().first()
+
     async def get_list(self):
         result = await self.repo.execute(select(User))
         return result.scalars().all()

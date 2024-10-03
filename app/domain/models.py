@@ -33,7 +33,7 @@ class User(TimestampMixin, Base):
 
     @property
     def password(self):
-        raise AttributeError("Password is not a readable attribute.")
+        return self.password
 
     @password.setter
     def password(self, plain_password):
@@ -41,5 +41,5 @@ class User(TimestampMixin, Base):
         hashed_password = bcrypt.hashpw(plain_password.encode('utf-8'), salt)
         self._password = hashed_password.decode('utf-8')
 
-    def verify_password(self, plain_password):
+    def check_password(self, plain_password):
         return bcrypt.checkpw(plain_password.encode('utf-8'), self._password.encode('utf-8'))

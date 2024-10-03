@@ -1,14 +1,8 @@
 import pytest
 from app.schemas.requests.user_requests import CreateUserRequest
 from fastapi import HTTPException
-from fixtures.user import create_user, user_svc, user_controller
-
-USER_MOCK = {
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "john.doe@gmail.com",
-    "password": "password"
-}
+from fixtures.user import create_user
+from tests.mocks.user import USER_MOCK
 
 @pytest.mark.asyncio
 async def test_get_user_found(setup, user_controller):

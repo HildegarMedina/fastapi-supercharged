@@ -1,14 +1,7 @@
 import pytest
 from tests.fixtures.user import create_user
 from app.schemas.requests.user_requests import CreateUserRequest
-from tests.fixtures.user import user_svc
-
-PAYLOAD_USER = {
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "john.doe@gmail.com",
-    "password": "password"
-}
+from tests.mocks.user import USER_MOCK
 
 @pytest.mark.asyncio
 async def test_get(setup, user_svc):
@@ -31,7 +24,7 @@ async def test_get_list(setup, user_svc):
 @pytest.mark.asyncio
 async def test_create(user_svc):
     """Test create user."""
-    payload = CreateUserRequest(**PAYLOAD_USER)
+    payload = CreateUserRequest(**USER_MOCK)
     user = await user_svc.create(payload)
     assert user.id is not None
 
@@ -40,11 +33,11 @@ async def test_update(setup, user_svc):
     """Test update user."""
     repo, _ = setup
     user = await create_user(repo)
-    payload = CreateUserRequest(**PAYLOAD_USER)
+    payload = CreateUserRequest(**USER_MOCK)
     payload.password = None
     await user_svc.update(user.id, payload)
     found = await user_svc.get(user.id)
-    assert found.first_name == PAYLOAD_USER["first_name"]
+    assert found.first_name == USER_MOCK["first_name"]
 
 @pytest.mark.asyncio
 async def test_delete(setup, user_svc):

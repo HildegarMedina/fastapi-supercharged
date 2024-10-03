@@ -9,4 +9,4 @@ exclude =
     tests/*
 max-complexity = 6
 import-order-style = google
-application-import-names = app, migrations, routes
+application-import-names = app, migrations, routes, config

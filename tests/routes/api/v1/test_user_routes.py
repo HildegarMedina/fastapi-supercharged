@@ -1,16 +1,10 @@
 """Routes User test file."""
 import pytest
 from tests.fixtures.user import create_user
+from tests.mocks.user import USER_MOCK
 
 HEADERS = {
     "Content-Type": "application/json"
-}
-
-PAYLOAD_USER = {
-    "first_name": "John",
-    "last_name": "Doe",
-    "email": "john.doe@gmail.com",
-    "password": "password"
 }
 
 @pytest.mark.asyncio
@@ -44,7 +38,7 @@ async def test_get_user(setup):
 async def test_create_user(setup):
     """Test the api/v1/users post route."""
     _, client = setup
-    response = client.post("/api/v1/users", headers=HEADERS, json=PAYLOAD_USER)
+    response = client.post("/api/v1/users", headers=HEADERS, json=USER_MOCK)
     assert response.status_code == 201
     assert response.json()["id"]
 
@@ -53,7 +47,7 @@ async def test_update_user(setup):
     """Test the api/v1/users put route."""
     repo, client = setup
     user = await create_user(repo)
-    response = client.put(f"/api/v1/users/{user.id}", headers=HEADERS, json=PAYLOAD_USER)
+    response = client.put(f"/api/v1/users/{user.id}", headers=HEADERS, json=USER_MOCK)
     assert response.status_code == 204
 
 @pytest.mark.asyncio

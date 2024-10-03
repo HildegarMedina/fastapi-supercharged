@@ -1,17 +1,9 @@
-from datetime import datetime
-from typing import Union
-
 from pydantic import BaseModel
 
-
-class TimeStampResponse(BaseModel):
-    created_at: datetime
-    modified_at: datetime
-    created_by: Union[int, None]
-    modified_by: Union[int, None]
+from app.schemas.generics import TimeStamp
 
 
-class UserResponse(TimeStampResponse):
+class UserResponse(BaseModel, TimeStamp):
     id: int
     first_name: str
     last_name: str

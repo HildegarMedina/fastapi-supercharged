@@ -1,7 +1,10 @@
+from functools import wraps
+
 from fastapi import HTTPException
 
 
 def raise_http_exception(func):
+    @wraps(func)
     async def wrapper(*args, **kwargs):
         result = await func(*args, **kwargs)
         if result.get("error"):

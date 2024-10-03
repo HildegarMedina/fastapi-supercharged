@@ -87,9 +87,10 @@ Execute the coverage:
 │   ├── controllers     # Interface client - services
 │   ├── domain          # Domain models and business logic
 │   ├── repository      # Data access and persistence
-│   └── schemas         # Pydantic models used for data validation
-|       ├── requests    # Request models for data validation
-|       └── responses   # Response models for data validation
+│   ├── schemas         # Pydantic models used for data validation
+│   │   ├── responses   # Response models for data validation
+|   │   ├── requests    # Request models for data validation
+|   │   └── generics.py # Generic models for data validation
 │   ├── services        # business logic layer of the application
 │   └── utils           # Utility functions 
 ├── config              # Contains configuration files

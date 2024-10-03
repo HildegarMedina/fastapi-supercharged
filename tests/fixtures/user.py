@@ -21,3 +21,8 @@ async def create_user(repo, first_name="John", last_name="Doe", email="john.doe@
         password=password
     ) 
     return await user_svc.create(user_object)
+
+async def delete_user(repo, user_id):
+    user_svc = UserService(repo)
+    user = await user_svc.get(user_id)
+    await user_svc.delete(user)
