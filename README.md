@@ -19,14 +19,12 @@ This is a project template for a scalable, high-performance, and sustainable API
 | **SQLAlchemy** | A Python ORM that provides a powerful and efficient way to interact with databases. |
 | **Pydantic** | A data validation and settings management library using Python type annotations. |
 | **PostgreSQL** | An open-source relational database management system with an emphasis on extensibility and standards compliance. |
-|  **Redis** | An in-memory data structure store, used as a database, cache, and message broker. |
 | **Pytest** | A testing framework for Python that allows you to write simple and scalable test cases. |
 
 ## 🛠 Other Tools and Libraries
 
 | Technology   | Description                                                |
 |--------------|-----------------------------------------------------------|
-| **Alembic** | A database migration tool for SQLAlchemy used to manage database schemas. |
 | **Flake8** | A code analysis framework that combines several static analysis tools into one. |
 
 
@@ -101,3 +99,4 @@ Execute the coverage:
 ├── requirements.txt    # Dependencies of project
 └── main.py             # Main script of project
 ```
+
