@@ -1,5 +1,5 @@
 # FastAPI Supercharged
-![FastAPI Supercharged](https://i.ibb.co/QfVhcV8/Create-A-Horizontal-Logo-For-Fast-Api-Supercharged-c-pia.png)
+<img src="https://i.ibb.co/QfVhcV8/Create-A-Horizontal-Logo-For-Fast-Api-Supercharged-c-pia.png" style="width: 100%">
 
 This is a project template for a scalable, high-performance, and sustainable API using FastAPI.
 
